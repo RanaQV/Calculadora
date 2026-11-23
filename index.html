@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Básica</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .calculadora {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        width: 300px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #0078d7;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #005fa3;
+    }
+
+    #resultado {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculadora">
+    <h2>Calculadora</h2>
+
+    <input type="number" id="num1" placeholder="Primer número">
+
+    <select id="operacion">
+        <option value="+">Suma (+)</option>
+        <option value="-">Resta (-)</option>
+        <option value="*">Multiplicación (×)</option>
+        <option value="**">Potencia (^)</option>
+    </select>
+
+    <input type="number" id="num2" placeholder="Segundo número">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado">Resultado: </div>
+</div>
+
+<script>
+function calcular() {
+    const num1 = Number(document.getElementById("num1").value);
+    const num2 = Number(document.getElementById("num2").value);
+    const operacion = document.getElementById("operacion").value;
+
+    let resultado;
+
+    switch (operacion) {
+        case "+":
+            resultado = num1 + num2;
+            break;
+        case "-":
+            resultado = num1 - num2;
+            break;
+        case "*":
+            resultado = num1 * num2;
+            break;
+        case "**":
+            resultado = num1 ** num2;
+            break;
+        default:
+            resultado = "Operación no válida";
+    }
+
+    document.getElementById("resultado").textContent =
+        "Resultado: " + resultado;
+}
+</script>
+
+</body>
+</html>
