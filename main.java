@@ -6,7 +6,7 @@ public class main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== CALCULADORA ===");
+        System.out.println("==== CALCULADORA ====");
 
         System.out.print("Introduce el primer número: ");
         double num1 = sc.nextDouble();
